@@ -12,7 +12,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
-  { path: 'category', component: CategoryComponent},
+  { path: 'category/:id', component: CategoryComponent},
   { path: '404', component: NotFoundComponent},
   { path: 'my-cart', component: MyCartComponent},
   { path: 'login', component: LoginComponent},
