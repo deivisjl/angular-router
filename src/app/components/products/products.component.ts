@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { CreateProductDTO, Product, UpdateProductDTO } from '../../models/product.model';
 
@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
 
   myShoppingCart: Product[] = [];
   total = 0;
-  products: Product[] = [];
+  @Input() products: Product[] = [];
   showProductDetail = false;
   productChoosen: Product = {
     id: '',
@@ -42,11 +42,11 @@ export class ProductsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productsService.getProductByPage(10,0)
+    /*this.productsService.getProductByPage(10,0)
     .subscribe(data => {
       this.products = data;
       this.offset += this.limit;
-    });
+    });*/
   }
 
   onAddToShoppingCart(product: Product) {
